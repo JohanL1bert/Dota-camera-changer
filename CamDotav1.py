@@ -11,10 +11,7 @@ with open(filename, mode='rb') as r:
     strings = re.findall('dota_camera_pitch_max\x00\x00\x00\d{4}', r.read())
     c = ''.join(strings)[24:28]
     ab = int(c)
-    if ab in total:
-        print ab
-    else:
-        print "fail"
+    print ab
                
 
 
