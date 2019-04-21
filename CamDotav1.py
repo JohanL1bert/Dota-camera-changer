@@ -1,4 +1,4 @@
-#python 2.7.6
+#!/usr/bin/env python2.7.6
 import re, time
 filename = "client.dll"
 with open(filename, mode='rb') as s:
