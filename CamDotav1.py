@@ -1,3 +1,4 @@
+#python 2.7
 import re, time
 filename = "client.dll"
 with open(filename, mode='rb') as s:
