@@ -1,0 +1,9 @@
+Script to change the screen resolution in the game Dota 2
+-
+CamDotav1.py
+Must be in your disk \ Steam \ steamapps \ common \ dota 2 beta \ game \ dota \ bin \ win64
+win 32 or 64 depending on the OS
+run and then choose what you need
+-
+CamDotav1.exe version for Windows user. You don't need to install python to run this.
+-
