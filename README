@@ -13,3 +13,11 @@ input size
 From 1000 to 9999
 -
 CamDotav1 and Camdotav2 not working
+-
+Console.py
+Python 2.6.7
+input size
+range from 1001 to 1800
+Working
+Put in same directory
+-
