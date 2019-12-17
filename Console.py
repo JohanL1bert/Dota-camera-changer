@@ -1,4 +1,4 @@
-#python 2.7
+#python 2.7.6
 import re, time
 filename = "client.dll"
 
@@ -30,7 +30,6 @@ def edit():
       if len(str(num_cam)) == 4 and num_cam <= 1900 and num_cam >=1001:
         changer_cam()
         print "Complete""\n", "Your new size is:", find_fuc()
-        #
         time.sleep(3)
         exit()
       else:
