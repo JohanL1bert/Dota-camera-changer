@@ -50,27 +50,3 @@ while True:
             print("Only 4 digits number from range 1001 and 1900")
     except ValueError:
         print("No letters, only numbers")
-
-
-        
-        
-    
-
-
-#dota_camera_legacy 0
-
-# Работа с байтами
-# Декодировать строку в какую ту кодировку. Аски например
-# Поработать
-# Закодировать строку
-# Переписать
-
-
-
-# default size 1134
-#dota_camera_legacy 0 возможно сработает
-#i still have it actually. u can find 1134 and in game console change camera legacy to 1
-# Переписать на findall
-#fot team 0.45
-
-
