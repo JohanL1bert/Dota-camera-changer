@@ -1,6 +1,7 @@
 import re
 import time
 
+
 filename = ("client.dll")
 
 
@@ -8,7 +9,6 @@ def read_file():
     with open(filename, mode = 'rb') as r:
         find_size = re.search(b'r_propsmaxdist\x00\x00\d{4}', r.read())
         return find_size 
-
 
 
 def view_camera_distance(copy_size):
@@ -32,7 +32,6 @@ def changer_cam(copy_size):
 
 
 copy_size = read_file()
-
 
 
 #TODO: Write check camera distance when overwriting
