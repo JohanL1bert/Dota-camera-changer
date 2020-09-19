@@ -21,8 +21,13 @@ range from 1001 to 1800
 Working
 Put in same directory
 ---
-Camera-dotaV3.py working
-But before you need write in game console Dota_camera_legacy 0. Only one time.
+
+## Camera-dotaV3.py working
+For the script to work you need open Dota -> open console and write 
+```bash
+Dota_camera_legacy 0
+```
+
 input size
 range from 1001 to 1900
 Same directory
