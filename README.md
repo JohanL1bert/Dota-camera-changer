@@ -8,11 +8,14 @@ For the script to work you need open Dota -> open console and write
 ```
 Dota_camera_legacy 0
 ```
+Only one time
 
+Settings:
 input size
 
 range from 1001 to 1900
 
+Important:
 When dota updated size of camera distance is overwrite to default
 
 default distance = 1200
