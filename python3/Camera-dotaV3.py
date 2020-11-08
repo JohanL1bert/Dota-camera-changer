@@ -7,13 +7,13 @@ filename = ("client.dll")
 
 def read_file():
     with open(filename, mode = 'rb') as r:
-        find_size = re.search(b'Maximum visible distance\x00\x00\x00\x00\d{4}', r.read())
+        find_size = re.search(b'r_propsmaxdist\x00\x00\d{4}', r.read())
         return find_size 
 
 # copy_size = re.match object
 def view_camera_distance(copy_size):
     view = copy_size[0].decode("ascii")
-    view_size = view[28:32]
+    view_size = view[16:20]
     return view_size
 
 
@@ -23,7 +23,7 @@ def changer_cam(copy_size):
         decode_cam_distance = copy_size[0].decode("ascii")
         copy_cam_distance = decode_cam_distance[:-4]
         encode_camera = ((copy_cam_distance + str(num_cam)).encode("ascii"))
-        pattern = (b'Maximum visible distance\x00\x00\x00\x00\d{4}')
+        pattern = (b'r_propsmaxdist\x00\x00\d{4}}')
         new_camera = re.sub(pattern, encode_camera, file_read)
 
 
