@@ -1,0 +1,7 @@
+Previouse and current keywords
+
+Name || (null) || camera_distance
+1. dota_camera_pitch_max
+2. dota_camera_pitch_max_teamspec
+3. Maximum visible distance
+4. r_propsmaxdist
