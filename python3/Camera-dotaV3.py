@@ -7,13 +7,17 @@ filename = ("client.dll")
 
 def read_file():
     with open(filename, mode = 'rb') as r:
-        find_size = re.search(b'r_propsmaxdist\x00\x00\d{4}', r.read())
+        find_size = re.search(b'Maximum visible distance\x00\x00\x00\x00\d{4}', r.read())
         return find_size 
 
-# copy_size = re.match object
+    
 def view_camera_distance(copy_size):
     view = copy_size[0].decode("ascii")
-    view_size = view[16:20]
+    return view
+
+
+def find_pattern(view):
+    view_size = re.search(r'[0-9]{4}', view).group()
     return view_size
 
 
@@ -23,7 +27,7 @@ def changer_cam(copy_size):
         decode_cam_distance = copy_size[0].decode("ascii")
         copy_cam_distance = decode_cam_distance[:-4]
         encode_camera = ((copy_cam_distance + str(num_cam)).encode("ascii"))
-        pattern = (b'r_propsmaxdist\x00\x00\d{4}}')
+        pattern = (b'Maximum visible distance\x00\x00\x00\x00\d{4}')
         new_camera = re.sub(pattern, encode_camera, file_read)
 
 
@@ -31,18 +35,21 @@ def changer_cam(copy_size):
         b.write(new_camera)
 
 
-copy_size = read_file()
-
 
 #TODO: Write check camera distance when overwriting
+copy_size = read_file()
 print("Hints: the original camera distance is 1200")
-print("Your camera distance", view_camera_distance(copy_size))
+decode_value = view_camera_distance(copy_size)
+print("Your camera distance:", find_pattern(decode_value))
 while True:
     try:
         num_cam = int(input("Type only 4 digits numbers, no letters: "))
         if len(str(num_cam)) == 4 and num_cam <= 1900 and num_cam >= 1001:
             changer_cam(copy_size)
-            print("Seems to be complete")
+            print("___________________")
+            copy_size = read_file()
+            decode_value = view_camera_distance(copy_size)
+            print("Your camera distance:", find_pattern(decode_value))
             time.sleep(2)
             exit()
         else:
